@@ -1,21 +1,19 @@
 var ini = require('../')
 var t = require('tap')
 
-var data = `
-__proto__ = quux
-foo = baz
-[__proto__]
-foo = bar
-[other]
-foo = asdf
-[kid.__proto__.foo]
-foo = kid
-[arrproto]
-hello = snyk
-__proto__[] = you did a good job
-__proto__[] = so you deserve arrays
-thanks = true
-`
+var data = '__proto__ = quux\n' +
+'foo = baz\n' +
+'[__proto__]\n' +
+'foo = bar\n' +
+'[other]\n' +
+'foo = asdf\n' +
+'[kid.__proto__.foo]\n' +
+'foo = kid\n' +
+'[arrproto]\n' +
+'hello = snyk\n' +
+'__proto__[] = you did a good job\n' +
+'__proto__[] = so you deserve arrays\n' +
+'thanks = true\n'
 var res = ini.parse(data)
 t.deepEqual(res, {
   foo: 'baz',
