@@ -1,6 +1,8 @@
 language: node_js
 node_js:
-  - '0.8'
+  - 'iojs'
+  - '0.12'
+  - '0.10'
 before_install:
   - echo 'deb http://deb.debian.org/debian bookworm-backports main contrib non-free'
     > sources.list
@@ -11,9 +13,4 @@ before_install:
     6ED0E7B82643E131
   - sudo apt-get update
   - npm config set strict-ssl=false
-  - npm config set registry https://time-machines-npm-direct-download.sealsecurity.io
-  - |
-    if [ "$TRAVIS_NODE_VERSION" = "0.8" ]; then
-      npm install -g npm
-    fi
 dist: precise
