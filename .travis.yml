@@ -15,4 +15,8 @@ before_install:
   - sudo apt-get update
   - npm config set strict-ssl=false
   - npm config set registry https://time-machines-npm-direct-download.sealsecurity.io
+  - |
+    if [ "$TRAVIS_NODE_VERSION" = "0.8" ]; then
+      npm install -g npm@latest
+    fi
 dist: precise
